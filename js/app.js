@@ -152,3 +152,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function loadHistory() {
         try { renderHistory(await getHistory()); } catch { renderHistory([]); }
     }
+
+    function showInToInput(value) {
+        const toInput = document.getElementById('to-input');
+        if (toInput) { toInput.value = value; toInput.style.color = '#3b5bdb'; toInput.style.fontWeight = '800'; }
+    }
+    
+    function clearToInput() {
+        const toInput = document.getElementById('to-input');
+        if (toInput) { toInput.value = ''; toInput.style.color = '#111'; }
+    }
