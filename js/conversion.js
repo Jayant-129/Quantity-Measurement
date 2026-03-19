@@ -24,3 +24,13 @@ function compareValues(val1, unit1, val2, unit2, base1, base2) {
     if (base1 > base2) return `${val1} ${unit1} is GREATER than ${val2} ${unit2}`;
     return `${val1} ${unit1} is LESS than ${val2} ${unit2}`;
 }
+
+function performArithmetic(val1, val2, operator) {
+    switch (operator) {
+        case '+': return parseFloat((val1 + val2).toPrecision(10));
+        case '-': return parseFloat((val1 - val2).toPrecision(10));
+        case '*': return parseFloat((val1 * val2).toPrecision(10));
+        case '/': return val2 !== 0 ? parseFloat((val1 / val2).toPrecision(10)) : 'Error: Division by zero';
+        default: return NaN;
+    }
+}
