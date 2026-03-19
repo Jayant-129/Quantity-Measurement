@@ -18,3 +18,9 @@ function applyConversion(value, steps) {
     }
     return parseFloat(val.toPrecision(10));
 }
+
+function compareValues(val1, unit1, val2, unit2, base1, base2) {
+    if (Math.abs(base1 - base2) < 1e-9) return `${val1} ${unit1} is EQUAL to ${val2} ${unit2}`;
+    if (base1 > base2) return `${val1} ${unit1} is GREATER than ${val2} ${unit2}`;
+    return `${val1} ${unit1} is LESS than ${val2} ${unit2}`;
+}

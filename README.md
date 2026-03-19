@@ -8,3 +8,4 @@
 - UC5: save calculation to history
 - UC6: load history records
 - UC7: apply conversion factor or formula
+- UC8: compare two measurement values
