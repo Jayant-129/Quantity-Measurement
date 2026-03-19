@@ -20,3 +20,14 @@ function setActive(parentEl, clickedEl, selector) {
     parentEl.querySelectorAll(selector).forEach(el => el.classList.remove('active'));
     clickedEl.classList.add('active');
 }
+
+function showResult(value, unit) {
+    const valEl = document.getElementById('result-value');
+    const unitEl = document.getElementById('result-unit');
+    if (!valEl) return;
+    valEl.textContent = (value !== null && value !== undefined && value !== '') ? value : '—';
+    if (unitEl) unitEl.textContent = unit || '';
+    valEl.classList.remove('animate');
+    void valEl.offsetWidth;
+    valEl.classList.add('animate');
+}

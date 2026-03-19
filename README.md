@@ -12,3 +12,4 @@
 - UC9: perform arithmetic between two measurements
 - UC10: populate unit dropdown
 - UC11: set active button
+- UC12: show result in result panel
