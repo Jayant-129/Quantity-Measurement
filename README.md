@@ -17,3 +17,4 @@
 - UC14: render history list
 - UC15: handle type card click
 - UC16: handle action tab click
+- UC17: execute calculation

@@ -143,22 +143,69 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (resultCard) resultCard.style.display = isConversion ? 'none' : 'block';
     }
 
-    
-    async function loadUnits(type) {
-        try { const units = await getUnits(type); populateDropdown(fromSelect, units); populateDropdown(toSelect, units); }
-        catch { showResult('Server unavailable', ''); }
+    function attachEventListeners() {
+        if (typeSelector) {
+            typeSelector.querySelectorAll('.type-card').forEach(card => {
+                card.addEventListener('click', async () => {
+                    state.type = card.dataset.type;
+                    setActive(typeSelector, card, '.type-card');
+                    fromInput.value = '';
+                    clearToInput();
+                    state.fromUnit = '';
+                    state.toUnit = '';
+                    showResult('', '');
+                    await loadUnits(state.type);
+                });
+            });
+        }
+
+        if (actionSelector) {
+            actionSelector.querySelectorAll('.action-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    state.action = btn.dataset.action;
+                    setActive(actionSelector, btn, '.action-btn');
+                    toggleOperators(state.action === 'Arithmetic');
+                    setActionLabels(state.action);
+                    fromInput.value = '';
+                    clearToInput();
+                    showResult('', '');
+                });
+            });
+        }
+
+        if (fromSelect) fromSelect.addEventListener('change', () => { state.fromUnit = fromSelect.value; calculate(); });
+        if (toSelect)   toSelect.addEventListener('change',   () => { state.toUnit   = toSelect.value;   calculate(); });
+        if (fromInput)  fromInput.addEventListener('input', () => calculate());
+        if (toInput)    toInput.addEventListener('input', () => {
+            if (state.action !== 'Conversion') calculate();
+        });
+
+        if (historyToggle && historyPanel) {
+            historyToggle.addEventListener('click', () => historyPanel.classList.toggle('open'));
+        }
+
+        if (opDisplayBtn) {
+            opDisplayBtn.addEventListener('click', () => setTimeout(() => calculate(), 60));
+        }
+        document.querySelectorAll('.op-choice').forEach(btn => {
+            btn.addEventListener('click', () => {
+                state.operator = btn.dataset.op;
+                setTimeout(() => calculate(), 60);
+            });
+        });
     }
 
-    async function loadHistory() {
-        try { renderHistory(await getHistory()); } catch { renderHistory([]); }
-    }
+    const firstCard = typeSelector ? typeSelector.querySelector('.type-card') : null;
+    if (firstCard) setActive(typeSelector, firstCard, '.type-card');
 
-    function showInToInput(value) {
-        const toInput = document.getElementById('to-input');
-        if (toInput) { toInput.value = value; toInput.style.color = '#3b5bdb'; toInput.style.fontWeight = '800'; }
-    }
-    
-    function clearToInput() {
-        const toInput = document.getElementById('to-input');
-        if (toInput) { toInput.value = ''; toInput.style.color = '#111'; }
-    }
+    const firstBtn = actionSelector ? actionSelector.querySelector('.action-btn') : null;
+    if (firstBtn) setActive(actionSelector, firstBtn, '.action-btn');
+
+    toggleOperators(false);
+    setActionLabels('Conversion');
+    attachEventListeners();
+
+    await loadUnits('Length');
+    await loadHistory();
+
+});
