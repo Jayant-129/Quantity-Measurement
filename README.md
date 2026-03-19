@@ -15,3 +15,4 @@
 - UC12: show result in result panel
 - UC13: toggle operator row
 - UC14: render history list
+- UC15: handle type card click
