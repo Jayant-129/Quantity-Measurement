@@ -1,0 +1,351 @@
+{
+  "units": [
+    {
+      "id": "1",
+      "type": "length",
+      "label": "Kilometer",
+      "symbol": "km"
+    },
+    {
+      "id": "2",
+      "type": "length",
+      "label": "Meter",
+      "symbol": "m"
+    },
+    {
+      "id": "3",
+      "type": "length",
+      "label": "Centimeter",
+      "symbol": "cm"
+    },
+    {
+      "id": "4",
+      "type": "weight",
+      "label": "Kilogram",
+      "symbol": "kg"
+    },
+    {
+      "id": "5",
+      "type": "weight",
+      "label": "Gram",
+      "symbol": "g"
+    },
+    {
+      "id": "6",
+      "type": "weight",
+      "label": "Milligram",
+      "symbol": "mg"
+    },
+    {
+      "id": "7",
+      "type": "volume",
+      "label": "Liter",
+      "symbol": "l"
+    },
+    {
+      "id": "8",
+      "type": "volume",
+      "label": "Milliliter",
+      "symbol": "ml"
+    },
+    {
+      "id": "9",
+      "type": "temperature",
+      "label": "Celsius",
+      "symbol": "C"
+    },
+    {
+      "id": "10",
+      "type": "temperature",
+      "label": "Fahrenheit",
+      "symbol": "F"
+    },
+    {
+      "id": "11",
+      "type": "temperature",
+      "label": "Kelvin",
+      "symbol": "K"
+    }
+  ],
+  "conversions": [
+    {
+      "id": "1",
+      "from": "km",
+      "to": "m",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": "2",
+      "from": "m",
+      "to": "cm",
+      "factor": 100,
+      "formula": null
+    },
+    {
+      "id": "3",
+      "from": "cm",
+      "to": "m",
+      "factor": 0.01,
+      "formula": null
+    },
+    {
+      "id": "4",
+      "from": "kg",
+      "to": "g",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": "5",
+      "from": "g",
+      "to": "mg",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": "6",
+      "from": "mg",
+      "to": "g",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "id": "7",
+      "from": "l",
+      "to": "ml",
+      "factor": 1000,
+      "formula": null
+    },
+    {
+      "id": "8",
+      "from": "ml",
+      "to": "l",
+      "factor": 0.001,
+      "formula": null
+    },
+    {
+      "id": "9",
+      "from": "C",
+      "to": "F",
+      "factor": null,
+      "formula": "(x*9/5)+32"
+    },
+    {
+      "id": "10",
+      "from": "F",
+      "to": "C",
+      "factor": null,
+      "formula": "(x-32)*5/9"
+    },
+    {
+      "id": "11",
+      "from": "C",
+      "to": "K",
+      "factor": null,
+      "formula": "x+273.15"
+    },
+    {
+      "id": "12",
+      "from": "K",
+      "to": "C",
+      "factor": null,
+      "formula": "x-273.15"
+    }
+  ],
+  "history": [
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "1 m → cm",
+      "result": "100 cm",
+      "timestamp": "2026-03-23T15:47:27.350Z",
+      "id": "JOc87MrnXJA"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "1 m → cm",
+      "result": "100 cm",
+      "timestamp": "2026-03-23T15:47:28.776Z",
+      "id": "J2C5HDfe7y4"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "10 m → cm",
+      "result": "1000 cm",
+      "timestamp": "2026-03-23T15:47:29.013Z",
+      "id": "f8pm8EdpXl4"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:29.168Z",
+      "id": "U0BFV3KN8s8"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:31.981Z",
+      "id": "WA4lfdWba4w"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:32.425Z",
+      "id": "nUntZ37eS4s"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:32.597Z",
+      "id": "D67DrDwwtZE"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:32.751Z",
+      "id": "eKiaZwSq5Vk"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:32.896Z",
+      "id": "CG_mEtRyjNI"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:33.046Z",
+      "id": "pA2xVzr3AEc"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:33.313Z",
+      "id": "9_KCVsx8vtE"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:33.805Z",
+      "id": "rX1LRxfO7mc"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:33.887Z",
+      "id": "ObhsXEhp2zI"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:33.968Z",
+      "id": "gfRa_wYOK8o"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:34.065Z",
+      "id": "3Mmwe67P31Q"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:34.148Z",
+      "id": "9xYIYzUC9j4"
+    },
+    {
+      "type": "Length",
+      "action": "Conversion",
+      "expression": "100 m → cm",
+      "result": "10000 cm",
+      "timestamp": "2026-03-23T15:47:42.990Z",
+      "id": "NM2ihpgyRTM"
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "100 m + 1 m",
+      "result": "101 m",
+      "timestamp": "2026-03-23T15:47:55.877Z",
+      "id": "ztnW9rM5ezs"
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "100 m + 10 m",
+      "result": "110 m",
+      "timestamp": "2026-03-23T15:47:56.322Z",
+      "id": "Ij92u7sQjGI"
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "100 m + 100 m",
+      "result": "200 m",
+      "timestamp": "2026-03-23T15:47:56.482Z",
+      "id": "lOdVplecd3g"
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "100 m + 1000 m",
+      "result": "1100 m",
+      "timestamp": "2026-03-23T15:47:56.621Z",
+      "id": "8slLzfHroCo"
+    },
+    {
+      "type": "Length",
+      "action": "Arithmetic",
+      "expression": "100 m + 10000 m",
+      "result": "10100 m",
+      "timestamp": "2026-03-23T15:47:56.754Z",
+      "id": "US5vCKZBo3c"
+    },
+    {
+      "type": "Weight",
+      "action": "Conversion",
+      "expression": "1 g → mg",
+      "result": "1000 mg",
+      "timestamp": "2026-03-23T15:56:47.234Z",
+      "id": "AZc9jYPTvVA"
+    },
+    {
+      "type": "Weight",
+      "action": "Conversion",
+      "expression": "12 g → mg",
+      "result": "12000 mg",
+      "timestamp": "2026-03-23T15:56:47.396Z",
+      "id": "tU7SvJVAX7I"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
