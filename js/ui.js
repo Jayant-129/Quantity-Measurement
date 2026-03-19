@@ -31,3 +31,10 @@ function showResult(value, unit) {
     void valEl.offsetWidth;
     valEl.classList.add('animate');
 }
+
+function toggleOperators(show) {
+    const wrapper = document.getElementById('operator-wrapper');
+    const spacer  = document.getElementById('op-spacer');
+    if (wrapper) wrapper.style.display = show ? 'flex' : 'none';
+    if (spacer)  spacer.style.display  = show ? 'none' : 'block';
+}
