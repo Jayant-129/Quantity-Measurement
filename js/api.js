@@ -42,3 +42,9 @@ async function saveHistory(record) {
     if (!res.ok) throw new Error('Failed to save history');
     return res.json();
 }
+
+async function getHistory() {
+    const res = await fetch(`${API_BASE}/history?_sort=-timestamp`);
+    if (!res.ok) throw new Error('Failed to load history');
+    return res.json();
+}

@@ -6,3 +6,4 @@
 - UC3: fetch units by type
 - UC4: fetch conversion record
 - UC5: save calculation to history
+- UC6: load history records
