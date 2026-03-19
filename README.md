@@ -7,3 +7,4 @@
 - UC4: fetch conversion record
 - UC5: save calculation to history
 - UC6: load history records
+- UC7: apply conversion factor or formula
