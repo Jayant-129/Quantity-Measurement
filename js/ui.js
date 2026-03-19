@@ -38,3 +38,16 @@ function toggleOperators(show) {
     if (wrapper) wrapper.style.display = show ? 'flex' : 'none';
     if (spacer)  spacer.style.display  = show ? 'none' : 'block';
 }
+
+function renderHistory(records) {
+    const list = document.getElementById('history-list');
+    if (!list) return;
+    list.innerHTML = '';
+    if (!records || !records.length) { list.innerHTML = '<li class="no-history">No history yet.</li>'; return; }
+    records.forEach(r => {
+        const li = document.createElement('li');
+        li.className = 'history-item';
+        li.innerHTML = `<span class="history-expr">${r.expression} = ${r.result}</span><span class="history-time">${new Date(r.timestamp).toLocaleString()}</span>`;
+        list.appendChild(li);
+    });
+}
