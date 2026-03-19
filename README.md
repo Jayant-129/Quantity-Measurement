@@ -10,3 +10,4 @@
 - UC7: apply conversion factor or formula
 - UC8: compare two measurement values
 - UC9: perform arithmetic between two measurements
+- UC10: populate unit dropdown
