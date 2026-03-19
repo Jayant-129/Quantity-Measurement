@@ -32,3 +32,13 @@ async function getConversion(from, to) {
     }
     throw new Error('Conversion not found');
 }
+
+async function saveHistory(record) {
+    const res = await fetch(`${API_BASE}/history`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(record)
+    });
+    if (!res.ok) throw new Error('Failed to save history');
+    return res.json();
+}
