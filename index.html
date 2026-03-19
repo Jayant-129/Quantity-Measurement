@@ -1,0 +1,147 @@
+<!--
+  index.html - Main UI for the QuantityMeasurement app.
+  @author - developer
+  @version - 1.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantity Measurement</title>
+  <link href="https:
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <header class="app-header">
+    <button id="history-toggle" class="history-btn" aria-label="Toggle History">
+      <svg xmlns="http:
+        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </button>
+    <h1 class="app-title">Welcome To Quantity Measurement</h1>
+  </header>
+
+  
+  <div class="layout-wrapper">
+
+    
+    <aside id="history-panel" class="history-panel">
+      <div class="history-title">History</div>
+      <ul id="history-list" class="list-unstyled m-0"></ul>
+    </aside>
+
+    
+    <main class="main-content">
+      <div class="content-inner">
+
+        
+        <p class="section-label">CHOOSE TYPE</p>
+        <div class="type-cards-row" id="type-selector">
+          <button class="type-card active" data-type="Length">
+            <div class="type-icon">📏</div>
+            <span class="type-name">Length</span>
+          </button>
+          <button class="type-card" data-type="Weight">
+            <div class="type-icon">⚖️</div>
+            <span class="type-name">Weight</span>
+          </button>
+          <button class="type-card" data-type="Temperature">
+            <div class="type-icon">🌡️</div>
+            <span class="type-name">Temperature</span>
+          </button>
+          <button class="type-card" data-type="Volume">
+            <div class="type-icon">🧪</div>
+            <span class="type-name">Volume</span>
+          </button>
+        </div>
+
+        
+        <p class="section-label">CHOOSE ACTION</p>
+        <div class="action-bar" id="action-selector">
+          <button class="action-btn active" data-action="Conversion">Conversion</button>
+          <button class="action-btn" data-action="Comparison">Comparison</button>
+          <button class="action-btn" data-action="Arithmetic">Arithmetic</button>
+        </div>
+
+        
+        <div class="input-row">
+
+          
+          <div class="input-card">
+            <div class="input-label" id="from-label">FROM</div>
+            <input type="number" id="from-input" class="value-input" placeholder="0" />
+            <div class="unit-row">
+              <select id="from-select" class="unit-select"></select>
+            </div>
+          </div>
+
+          
+          <div class="op-center">
+            
+            <div id="op-spacer" class="arrow-icon">→</div>
+
+            
+            <div id="operator-wrapper" class="op-box" style="display:none;">
+              <button id="op-display-btn" class="op-main-btn" data-op="+">+</button>
+              <div id="op-dropdown" class="op-dropdown" style="display:none;">
+                <button class="op-choice" data-op="+">+</button>
+                <button class="op-choice" data-op="-">−</button>
+                <button class="op-choice" data-op="*">×</button>
+                <button class="op-choice" data-op="/">÷</button>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="input-card">
+            <div class="input-label" id="to-label">TO</div>
+            <input type="number" id="to-input" class="value-input" placeholder="Result" readonly />
+            <div class="unit-row">
+              <select id="to-select" class="unit-select"></select>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <div class="result-card" id="result-card" style="display:none;">
+          <div class="result-label">RESULT</div>
+          <div class="result-body">
+            <span id="result-value" class="result-value">—</span>
+            <span id="result-unit" class="result-unit"></span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="js/conversion.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    
+    const opBtn = document.getElementById('op-display-btn');
+    const opDrop = document.getElementById('op-dropdown');
+    if (opBtn && opDrop) {
+      opBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        opDrop.style.display = opDrop.style.display === 'none' ? 'block' : 'none';
+      });
+      document.querySelectorAll('.op-choice').forEach(btn => {
+        btn.addEventListener('click', () => {
+          opBtn.textContent = btn.textContent;
+          opBtn.dataset.op = btn.dataset.op;
+          opDrop.style.display = 'none';
+        });
+      });
+      document.addEventListener('click', () => { opDrop.style.display = 'none'; });
+    }
+  </script>
+</body>
+</html>
