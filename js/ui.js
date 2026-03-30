@@ -51,3 +51,5 @@ function renderHistory(records) {
         list.appendChild(li);
     });
 }
+
+export { populateDropdown, setActive, showResult, toggleOperators, renderHistory };

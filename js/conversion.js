@@ -20,6 +20,7 @@ function applyConversion(value, steps) {
 }
 
 function compareValues(val1, unit1, val2, unit2, base1, base2) {
+    if (isNaN(base1) || isNaN(base2)) return `Invalid values`;
     if (Math.abs(base1 - base2) < 1e-9) return `${val1} ${unit1} is EQUAL to ${val2} ${unit2}`;
     if (base1 > base2) return `${val1} ${unit1} is GREATER than ${val2} ${unit2}`;
     return `${val1} ${unit1} is LESS than ${val2} ${unit2}`;
@@ -30,7 +31,11 @@ function performArithmetic(val1, val2, operator) {
         case '+': return parseFloat((val1 + val2).toPrecision(10));
         case '-': return parseFloat((val1 - val2).toPrecision(10));
         case '*': return parseFloat((val1 * val2).toPrecision(10));
-        case '/': return val2 !== 0 ? parseFloat((val1 / val2).toPrecision(10)) : 'Error: Division by zero';
-        default: return NaN;
+        case '/': 
+            if (val2 === 0) throw new Error('Cannot divide by zero');
+            return parseFloat((val1 / val2).toPrecision(10));
+        default: throw new Error('Unknown operator');
     }
 }
+
+export { applyConversion, compareValues, performArithmetic };

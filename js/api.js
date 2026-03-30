@@ -48,3 +48,5 @@ async function getHistory() {
     if (!res.ok) throw new Error('Failed to load history');
     return res.json();
 }
+
+export { getUnits, getConversion, saveHistory, getHistory };
